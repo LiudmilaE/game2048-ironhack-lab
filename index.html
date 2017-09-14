@@ -6,14 +6,63 @@
     </head>
     <body>
 
-        <div>
-          <h1>Game 2048</h1>
-        </div>
-        <div id="score">
-          <h2>Score</h2>
-        </div>
+      <div id="container">
+        <header>
+          <h1>2048</h1>
+          <div id="score">
+            SCORE <span class="js-score">0</span>
+          </div>
+        </header>
+        <div id="main">
+          <div id="game-board">
+            <div class="row">
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+            </div>
+            <div class="row">
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+            </div>
 
-        <div id="grid"></div>
+            <div class="row">
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+            </div>
+
+            <div class="row">
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+            </div>
+
+            <div class="clearfix"></div>
+          </div>
+
+          <div id="tile-container">
+          </div>
+
+          <div id="game-over" class="hide">
+            <span class="lost">
+              Game over
+            </span>
+
+            <span class="won">
+              You won!
+            </span>
+
+            <p>
+              Score <span class="js-score"></span>
+            </p>
+          </div>
+        </div>
+      </div>
 
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.4/lodash.js"></script>
