@@ -85,10 +85,30 @@ Game2048.prototype._moveLeft = function () {
 
     newBoard.push(merged);
   });//*end of forEach
+  // Check if the board has changed
+
+  for (var y = 0; y < this.board.length; y++) {
+    for (var x = 0; x < this.board[y].length; x++) {
+      boardChanged = boardChanged || newBoard[y][x] !== this.board[y][x];
+    }
+  }
 
   this.board = newBoard;
   return boardChanged;
 };
+
+/*
+// Check if the board has changed
+var boardChanged = false;
+for (var y = 0; y < this.board.length; y++) {
+  for (var x = 0; x < this.board[y].length; x++) {
+    boardChanged = boardChanged || newBoard[y][x] !== this.board[y][x];
+  }
+}
+this.board = newBoard;
+return boardChanged;
+}
+*/
 
 //move Right
 Game2048.prototype._moveRight = function () {
@@ -121,6 +141,14 @@ Game2048.prototype._moveRight = function () {
 
     newBoard.push(merged);
   });// end of forEach
+
+  // Check if the board has changed
+
+  for (var y = 0; y < this.board.length; y++) {
+    for (var x = 0; x < this.board[y].length; x++) {
+      boardChanged = boardChanged || newBoard[y][x] !== this.board[y][x];
+    }
+  }
 
   this.board = newBoard;
   return boardChanged;
